@@ -1,24 +1,38 @@
 from django.shortcuts import render
+from abc import ABC, abstractmethod
 from .models import Requests
 
 # Create your views here.
 def visualizar(request): 
     return render(request, 'solicitacoes.html')
 
-class ControllRequest:
+class ControllRequestInternal(ABC):
+    # @staticmethod
+    # def visualizar(): 
+    #     result = Requests.listRequests() 
+    #     return result 
+
     @staticmethod
-    def visualizar(): 
+    def visualizar():
         result = Requests.listRequests() 
-        return result
+        return result 
 
-    def addRequest():
-        return None
+    @staticmethod
+    def addRequest(about, title):
+        result = Requests.addRequest(about, title)
+        return result 
 
-    def readResquest():
-        return None
+    @staticmethod
+    def readResquest(id):
+        result = Requests.readRequest(about, title)
+        return result 
 
-    def updateRequest():
-        return None
+    @staticmethod
+    def updateRequest(about, title,id):
+        result = Requests.updateRequest(about, title, id)
+        return result 
 
-    def deleteResquest():
-        return None
+    @staticmethod
+    def deleteResquest(id):
+        result = Requests.deleteteRequest( id)
+        return result 

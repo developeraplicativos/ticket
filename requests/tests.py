@@ -15,7 +15,7 @@ class TestClass(TestCase):
         self.assertIsNotNone(found)  
 
 class TestControl(TestCase):
-    def test_ControllRequest(self):
+    def test_ControllRequest_visualizar(self):
         req = Requests()
         result = req.addRequest("Preciso de ajuda", None)
         
@@ -24,3 +24,14 @@ class TestControl(TestCase):
         print(result)
         print('-controll------------')
         self.assertIsNotNone(result)  
+
+    def test_ControllRequest_delete(self): 
+        req = Requests()
+        result = req.addRequest("Preciso de ajuda", None)
+        print(result)
+
+        # result = ControllRequest.deleteResquest(1)
+        # print('-controll------------')
+        # print(result)
+        # print('-controll------------')
+        # self.assertIsNotNone(result)  
